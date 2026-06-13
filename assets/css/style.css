@@ -109,9 +109,8 @@ button {
 }
 
 .brand-mark {
-  width: 42px;
-  height: 42px;
-  color: var(--color-primary);
+  height: 40px;
+  width: auto;
 }
 
 .brand-main {
