@@ -1124,8 +1124,8 @@ body.nav-open .menu-icon::after {
   }
 
   .brand-mark {
-    width: 36px;
-    height: 36px;
+    height: 32px;
+    width: auto;
   }
 
   .brand-main {
