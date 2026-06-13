@@ -80,6 +80,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  document.addEventListener("click", (event) => {
+    if (!body.classList.contains("nav-open")) return;
+    if (navPanel && navPanel.contains(event.target)) return;
+    if (menuToggle && menuToggle.contains(event.target)) return;
+    closeMenu();
+  });
+
   mobileQuery.addEventListener("change", () => {
     closeMenu();
   });

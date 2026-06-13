@@ -42,6 +42,14 @@ body.nav-open {
   overflow: hidden;
 }
 
+body.nav-open::before {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  content: "";
+  background: rgba(10, 20, 50, 0.42);
+}
+
 img,
 svg {
   display: block;
@@ -324,8 +332,8 @@ body.nav-open .menu-icon::after {
   color: var(--color-white);
   overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(28, 36, 52, 0.88), rgba(28, 36, 52, 0.48)),
-    url("https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1920") center / cover;
+    linear-gradient(100deg, rgba(10, 28, 72, 0.68) 0%, rgba(10, 28, 72, 0.32) 65%, transparent 100%),
+    url("https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920") center / cover;
 }
 
 .hero::before {
@@ -699,8 +707,8 @@ body.nav-open .menu-icon::after {
   padding: 52px;
   color: var(--color-white);
   background:
-    linear-gradient(120deg, rgba(28, 36, 52, 0.96), rgba(28, 36, 52, 0.88)),
-    linear-gradient(110deg, transparent 0 66%, rgba(200, 16, 46, 0.4) 66% 68%, transparent 68%);
+    linear-gradient(120deg, rgba(12, 42, 108, 0.97), rgba(16, 54, 128, 0.90)),
+    linear-gradient(110deg, transparent 0 66%, rgba(200, 16, 46, 0.42) 66% 68%, transparent 68%);
   border-radius: var(--radius-sm);
   overflow: hidden;
 }
@@ -726,9 +734,9 @@ body.nav-open .menu-icon::after {
   color: var(--color-white);
   overflow: hidden;
   background:
-    linear-gradient(110deg, rgba(28, 36, 52, 0.96), rgba(28, 36, 52, 0.72)),
-    linear-gradient(110deg, transparent 0 62%, rgba(200, 16, 46, 0.32) 62% 63.2%, transparent 63.2%),
-    var(--color-dark);
+    linear-gradient(110deg, rgba(14, 46, 120, 0.92), rgba(14, 60, 140, 0.68)),
+    linear-gradient(110deg, transparent 0 62%, rgba(200, 16, 46, 0.36) 62% 63.2%, transparent 63.2%),
+    url("https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200") center / cover;
 }
 
 .page-hero p {
@@ -1137,6 +1145,7 @@ body.nav-open .menu-icon::after {
     top: var(--header-height);
     right: 0;
     bottom: 0;
+    z-index: 1001;
     width: min(86vw, 420px);
     padding: 20px;
     color: var(--color-dark);
@@ -1185,6 +1194,11 @@ body.nav-open .menu-icon::after {
     max-height: 360px;
     padding-top: 6px;
     padding-bottom: 8px;
+  }
+
+  .has-dropdown:hover .dropdown-menu,
+  .has-dropdown:focus-within .dropdown-menu {
+    transform: none;
   }
 
   .dropdown-menu a {
