@@ -45,7 +45,7 @@ body.nav-open {
 body.nav-open::before {
   position: fixed;
   inset: 0;
-  z-index: 1000;
+  z-index: 900;
   content: "";
   background: rgba(0, 0, 0, 0.42);
 }
@@ -1117,6 +1117,12 @@ body.nav-open .menu-icon::after {
 @media (max-width: 1023px) {
   :root {
     --header-height: 60px;
+  }
+
+  /* backdrop-filter がモバイルで position:fixed の containing block になるバグを回避 */
+  .site-header {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .container {
